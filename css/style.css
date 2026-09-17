@@ -185,6 +185,7 @@ body {
 
 /* ------HERO-SECTION------------------------------------- */
 .hero {
+  margin-top: 20px;
 }
 .hero__container {
   max-width: 1360px;
@@ -253,3 +254,119 @@ body {
 .hero__button:hover .hero__button-icon {
   opacity: 1;
 }
+/* ----FAVORITE-COFFEE-SECTION----------------------------------------- */
+.favorite-coffee {
+  margin: 100px 0px;
+}
+.favorite-coffee__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.favorite-coffee__title {
+  color: #403f3d;
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+.favorite-coffee__title span {
+  color: #b0907a;
+  font-style: italic;
+}
+.favorite-coffee__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.favorite-coffee__slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.favorite-coffee__btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 1px solid #665F55;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.5s ease;
+}
+
+.favorite-coffee__btn:hover {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+.favorite-coffee__btn--prev {
+  margin-top: 40px;
+  margin-left: 2px;
+}
+.favorite-coffee__card {
+  margin-top: 40px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.favorite-coffee__image {
+  max-width: 480px;
+  width: 100%;
+}
+.favorite-coffee__name {
+  color: #403f3d;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-top: 20px;
+}
+.favorite-coffee__desc {
+  color: #403f3d;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 16px;
+}
+.favorite-coffee__price {
+  color: #403f3d;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-top: 16px;
+}
+.favorite-coffee__btn--next {
+  margin-right: 6px;
+  margin-top: 40px;
+}
+.favorite-coffee__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.favorite-coffee__dot {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: #c1b6ad;
+  border: none;
+  cursor: pointer;
+}
+.favorite-coffee__dot--active {
+  background: #665f55;
+}
+
+/* -------ABOUT-SECTION----------------------------------------------------- */
