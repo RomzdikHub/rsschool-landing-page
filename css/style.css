@@ -916,8 +916,8 @@ body {
   line-height: 125%;
 }
 
-.menu__relaod {
-  display: flex;
+.menu__reload {
+  display: none;
   align-items: center;
   justify-content: center;
   width: 60px;
@@ -934,6 +934,9 @@ body {
   .menu__container {
     padding: 0px;
     margin: 0px 40px;
+  }
+  .menu__reload {
+    display: flex;
   }
 }
 @media (max-width: 380px) {
