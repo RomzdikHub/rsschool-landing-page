@@ -9,16 +9,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon/coffee.png">
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <div class="header__container">
           <a href="index.html" class="header__logo-light">
-            <img src="assets/img/logo-light.svg" alt="logo" />
-          </a>
-          <a href="index.html" class="header__logo-dark">
-            <img src="assets/img/logo-dark.svg" alt="logo" />
+            <img id="logo" src="assets/img/logo-light.svg" alt="logo" />
           </a>
           <div class="header__body">
             <nav class="header__nav nav">
@@ -74,12 +72,9 @@
                 </svg>
               </span>
             </button>
-            <button
+            <a href="menu.html"
               class="header__coffee-menu"
-              type="button"
-              aria-label="Open coffee menu"
-            >
-              <a href="menu.html">Menu</a>
+            > <span>Menu</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -116,6 +111,13 @@
                   stroke-linejoin="round"
                 />
               </svg>
+            </a>
+            <button
+              class="burger"
+              type="button"
+            >
+              <span></span>
+              <span></span>
             </button>
           </div>
         </div>
@@ -133,7 +135,7 @@
                 and those seeking a warm and inviting space to enjoy their
                 favorite beverage.
               </div>
-              <a href="#" class="hero__button">
+              <a href="menu.html" class="hero__button">
                 <span>Menu</span>
                 <svg
                   class="hero__button-icon"
@@ -271,7 +273,7 @@
                     class="about__image about__image--big"
                   />
                 </div>
-                <div class="about__image-wrapper">
+                <div class="about__image-wrapper about__image-wrapper--small">
                   <img
                     src="assets/about-img/about-2.jpg"
                     alt="Coffee cup"
@@ -280,7 +282,7 @@
                 </div>
               </div>
               <div class="about__column">
-                <div class="about__image-wrapper">
+                <div class="about__image-wrapper about__image-wrapper--small">
                   <img
                     src="assets/about-img/about-3.jpg"
                     alt="Man drinking coffee"
