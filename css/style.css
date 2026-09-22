@@ -558,10 +558,25 @@ body {
   align-items: center;
   gap: 100px;
 }
+
 .mobile-app__download {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-app__img {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-app__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 630px;
 }
 .mobile-app__title {
   color: var(--color-text);
