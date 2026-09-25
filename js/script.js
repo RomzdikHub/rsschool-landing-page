@@ -1,3 +1,4 @@
+// Theme-Dark ------------------------------------------------------------
 const themeButton = document.querySelector(".theme-switch");
 const sunIcon = document.querySelector(".theme-switch__icon--sun");
 const moonIcon = document.querySelector(".theme-switch__icon--moon");
@@ -29,4 +30,21 @@ themeButton.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     logo.setAttribute("src", "assets/img/logo-light.svg");
   }
+});
+
+// Burger----------------------------------------------------------
+const header = document.querySelector(".header");
+const burger = document.querySelector(".burger");
+const navItem = document.querySelectorAll(".nav__item");
+
+burger.addEventListener("click", () => {
+  header.classList.toggle("open");
+  document.body.classList.toggle("no-scroll");
+});
+
+navItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    header.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  });
 });
