@@ -30,10 +30,14 @@
                   <a href="index.html#about" class="nav__link">About</a>
                 </li>
                 <li class="nav__item">
-                  <a href="index.html#mobile-app" class="nav__link">Mobile app</a>
+                  <a href="index.html#mobile-app" class="nav__link"
+                    >Mobile app</a
+                  >
                 </li>
                 <li class="nav__item">
-                  <a href="index.html#contact-us" class="nav__link">Contact us</a>
+                  <a href="index.html#contact-us" class="nav__link"
+                    >Contact us</a
+                  >
                 </li>
               </ul>
               <a
@@ -188,9 +192,7 @@
               </button>
             </div>
 
-            <div class="menu__cards">
-
-            </div>
+            <div class="menu__cards"></div>
             <button class="menu__show-more">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -375,6 +377,78 @@
           </div>
         </div>
       </footer>
+      <div class="modal-overlay hidden">
+        <div class="modal">
+          <div class="modal__image">
+            <img src="" alt="" />
+          </div>
+
+          <div class="modal__content">
+            <h2 class="modal__title">Irish coffee</h2>
+
+            <p class="modal__description">
+              Fragrant black coffee with Jameson Irish whiskey and whipped milk
+            </p>
+
+            <div class="modal__group">
+              <p class="modal__label">Size</p>
+
+              <div class="modal__options modal__options--sizes">
+                <button class="modal__option modal__option--active" data-size="s">
+                  <span class="modal__option-icon">S</span>
+                  <span class="modal__option-text">200 ml</span>
+                </button>
+
+                <button class="modal__option" data-size="m">
+                  <span class="modal__option-icon">M</span>
+                  <span class="modal__option-text">300 ml</span>
+                </button>
+
+                <button class="modal__option" data-size="l">
+                  <span class="modal__option-icon">L</span>
+                  <span class="modal__option-text">400 ml</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="modal__group">
+              <p class="modal__label">Additives</p>
+
+              <div class="modal__options modal__options--additives">
+                <button class="modal__option" data-additive="0">
+                  <span class="modal__option-icon">1</span>
+                  <span class="modal__option-text">Sugar</span>
+                </button>
+
+                <button class="modal__option" data-additive="1">
+                  <span class="modal__option-icon">2</span>
+                  <span class="modal__option-text">Cinnamon</span>
+                </button>
+
+                <button class="modal__option" data-additive="2">
+                  <span class="modal__option-icon">3</span>
+                  <span class="modal__option-text">Syrup</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="modal__total">
+              <span>Total:</span>
+              <span class="modal__price">$7.00</span>
+            </div>
+
+            <div class="modal__info">
+              <span class="modal__info-icon">ⓘ</span>
+              <p>
+                The total price depends on the selected size and additives.
+                After adding the item, you can review it in My order.
+              </p>
+            </div>
+
+            <button class="modal__close">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/products.js"></script>
     <script src="js/script.js"></script>
