@@ -997,7 +997,7 @@ body.no-scroll {
   line-height: 125%;
 }
 
-.menu__reload {
+.menu__show-more {
   display: none;
   align-items: center;
   justify-content: center;
@@ -1009,15 +1009,21 @@ body.no-scroll {
   color: inherit;
   cursor: pointer;
   margin-top: 40px;
+  color: var(--color-text);
 }
-
+.menu__show-more:hover {
+  background-color: #b0907a;
+}
 @media (max-width: 768px) {
   .menu__container {
     padding: 0px;
     margin: 0px 40px;
   }
-  .menu__reload {
+  .menu__show-more {
     display: flex;
+  }
+  .menu__show-more.hidden {
+    display: none;
   }
 }
 @media (max-width: 380px) {

@@ -52,6 +52,10 @@ navItem.forEach((item) => {
 // Dynamic catalog-----------------------------------------------
 const menuCards = document.querySelector(".menu__cards");
 const buttons = document.querySelectorAll(".menu__filter");
+const showMoreBtn = document.querySelector(".menu__show-more");
+
+let showAll = false;
+let currentCategory = "coffee";
 
 function renderCards(category) {
   menuCards.innerHTML = "";
@@ -59,7 +63,18 @@ function renderCards(category) {
     (product) => product.category === category,
   );
 
-  filteredProducts.forEach((product, index) => {
+  const isMobile = window.innerWidth <= 768;
+
+  const visibleCards =
+    isMobile && !showAll ? filteredProducts.slice(0, 4) : filteredProducts;
+
+  if (filteredProducts.length > 4 && !showAll) {
+    showMoreBtn.classList.remove("hidden");
+  } else {
+    showMoreBtn.classList.add("hidden");
+  }
+
+  visibleCards.forEach((product, index) => {
     const card = document.createElement("article");
     card.className = "menu-card";
     menuCards.appendChild(card);
@@ -92,16 +107,23 @@ function renderCards(category) {
     content.appendChild(price);
   });
 }
-renderCards("coffee");
+
+renderCards(currentCategory);
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const category = button.textContent.trim().toLowerCase();
-    renderCards(category);
+    currentCategory = button.textContent.trim().toLowerCase();
+    showAll = false;
+    renderCards(currentCategory);
 
     buttons.forEach((item) => {
       item.classList.remove("menu__filter--active");
     });
     button.classList.add("menu__filter--active");
   });
+});
+
+showMoreBtn.addEventListener("click", () => {
+  showAll = true;
+  renderCards(currentCategory);
 });
