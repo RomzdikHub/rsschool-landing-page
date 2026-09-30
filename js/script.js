@@ -1,16 +1,3 @@
-// Alarm message ---------------------------------------------------
-const noticeBtn = document.querySelector(".notice__button");
-const noticeOverlay = document.querySelector(".notice-overlay");
-
-if (noticeBtn && noticeOverlay) {
-  document.body.classList.add("no-scroll");
-
-  noticeBtn.addEventListener("click", () => {
-    noticeOverlay.classList.add("hidden");
-    document.body.classList.remove("no-scroll");
-  });
-}
-
 // Theme -----------------------------------------------------------
 const themeButton = document.querySelector(".theme-switch");
 const sunIcon = document.querySelector(".theme-switch__icon--sun");
@@ -266,3 +253,83 @@ if (menuCards) {
     }
   });
 }
+//Slider-----------------------------------------
+let currentSlide = 0;
+const prevBtn = document.querySelector(".favorite-coffee__btn--prev");
+const nextBtn = document.querySelector(".favorite-coffee__btn--next");
+const favoriteCoffeeImage = document.querySelector(".favorite-coffee__image");
+const favoriteCoffeeName = document.querySelector(".favorite-coffee__name");
+const favoriteCoffeeDesc = document.querySelector(".favorite-coffee__desc");
+const favoriteCoffeePrice = document.querySelector(".favorite-coffee__price");
+const favoriteCoffeePaginationBtn = document.querySelectorAll(
+  ".favorite-coffee__dot",
+);
+const favoriteCoffeeCard = document.querySelector(".favorite-coffee__card");
+
+const slides = [
+  {
+    image: "assets/slider-img/coffee-slider-0.png",
+    title: "S'mores Frappuccino",
+    description:
+      "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",
+    price: "$5.50",
+    alt: "S'mores Frappuccino",
+  },
+  {
+    image: "assets/slider-img/coffee-slider-1.png",
+    title: "Caramel Macchiato",
+    description:
+      "Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.",
+    price: "$5.00",
+    alt: "Caramel Macchiato",
+  },
+  {
+    image: "assets/slider-img/coffee-slider-2.png",
+    title: "Ice coffee",
+    description:
+      "A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.",
+    price: "$4.50",
+    alt: "Ice coffee",
+  },
+];
+
+function renderSlide() {
+  const slide = slides[currentSlide];
+  favoriteCoffeeCard.classList.add("favorite-coffee__card--hidden");
+  setTimeout(() => {
+    favoriteCoffeeImage.src = slide.image;
+    favoriteCoffeeImage.alt = slide.alt;
+    favoriteCoffeeName.textContent = slide.title;
+    favoriteCoffeeDesc.textContent = slide.description;
+    favoriteCoffeePrice.textContent = slide.price;
+    favoriteCoffeePaginationBtn.forEach((dot, index) => {
+      dot.classList.remove("favorite-coffee__dot--active");
+      if (index === currentSlide) {
+        dot.classList.add("favorite-coffee__dot--active");
+      }
+    });
+
+    favoriteCoffeeCard.classList.remove("favorite-coffee__card--hidden");
+  }, 300);
+}
+favoriteCoffeePaginationBtn.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentSlide = index;
+    renderSlide();
+  });
+});
+nextBtn.addEventListener("click", () => {
+  currentSlide = currentSlide + 1;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+  renderSlide();
+});
+prevBtn.addEventListener("click", () => {
+  currentSlide = currentSlide - 1;
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+  renderSlide();
+});
+renderSlide();
